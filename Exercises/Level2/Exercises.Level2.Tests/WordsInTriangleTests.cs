@@ -46,7 +46,7 @@ namespace Exercises.Level2.Tests
         }
 
         [Fact]
-        public void SunshineiSgREAT()
+        public void SunshineIsGreat()
         {
             string[] expected = new string[]
             {

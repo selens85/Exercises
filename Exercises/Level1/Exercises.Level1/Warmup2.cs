@@ -39,7 +39,7 @@ namespace Exercises.Level1
         /// countXX("xxx") → 2
         /// countXX("xxxx") → 3
         /// </summary>
-        public int CountXX(string str)
+        public int CountXx(string str)
         {
             throw new NotImplementedException();
         }

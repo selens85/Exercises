@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xunit;
+﻿using Xunit;
 
 namespace Exercises.Level2.Tests
 {
     public class HalfTriangleTests
     {
-        private readonly HalfTriangle _halfTriangle = new HalfTriangle();
+        private readonly HalfTriangle _halfTriangle = new();
 
         [Fact]
         public void HalfTriangle1()

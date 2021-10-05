@@ -5,7 +5,7 @@ namespace Exercises.Level1.Tests
 {
     public class Warmup2Theorys
     {
-        private Warmup2 _warmup2 = new Warmup2();
+        private readonly Warmup2 _warmup2 = new Warmup2();
 
         [Theory]
         [InlineData("Hi", 2, "HiHi")]
@@ -46,9 +46,9 @@ namespace Exercises.Level1.Tests
         [InlineData("", 0)]
         [InlineData("Kittens", 0)]
         [InlineData("Kittensxxx", 2)]
-        public void CountXX(string str, int expected)
+        public void CountXx(string str, int expected)
         {
-            Assert.Equal(expected, _warmup2.CountXX(str));
+            Assert.Equal(expected, _warmup2.CountXx(str));
         }
 
         [Theory]

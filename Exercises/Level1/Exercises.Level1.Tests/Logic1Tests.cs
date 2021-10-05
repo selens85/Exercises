@@ -4,7 +4,7 @@ namespace Exercises.Level1.Tests
 {
     public class Logic1Tests
     {
-        private Logic1 _logic1 = new Logic1();
+        private readonly Logic1 _logic1 = new Logic1();
 
         [Theory]
         [InlineData(false, 30, false)]
@@ -17,7 +17,6 @@ namespace Exercises.Level1.Tests
         [InlineData(true, 40, false)]
         [InlineData(false, 39, false)]
         [InlineData(true, 40, true)]
-        [InlineData(false, 39, true)]
         [InlineData(false, 39, true)]
         public void CigarParty(bool expected, int cigars, bool isWeekend)
         {

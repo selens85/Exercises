@@ -16,7 +16,7 @@ namespace Exercises.Level2.Tests
         }
 
         [Fact]
-        public void MANHATTAN()
+        public void Manhattan()
         {
             string[] response = _asciiTextArt.GetArt(GetLetters(), "MANHATTAN", 5, 4);
 

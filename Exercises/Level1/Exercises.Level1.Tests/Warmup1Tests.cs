@@ -4,7 +4,7 @@ namespace Exercises.Level1.Tests
 {
     public class Warmup1Theorys
     {
-        private Warmup1 _warmup1 = new Warmup1();
+        private readonly Warmup1 _warmup1 = new Warmup1();
 
         [Theory]
         [InlineData(false, false, true)]
