@@ -45,5 +45,5 @@ jobs:
         run: |
           cd Exercises
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"artisvilcins_Exercises" /o:"artisvilcins" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          dotnet build
+          dotnet build Exercises/Exercises.sln
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
