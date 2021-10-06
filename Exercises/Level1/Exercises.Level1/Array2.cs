@@ -3,7 +3,7 @@
 namespace Exercises.Level1
 {
     /// <summary>
-    /// Medium array problems -- 1 loop.
+    /// Medium array problems at least one loop.
     /// </summary>
     public class Array2
     {

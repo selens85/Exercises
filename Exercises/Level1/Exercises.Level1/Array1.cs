@@ -3,7 +3,8 @@
 namespace Exercises.Level1
 {
     /// <summary>
-    /// Basic array problems -- no loops.. Use a[0], a[1], ... to access elements in an array, a.Length is the length of array.
+    /// Basic array problems -- can do without loops, but using loops is recomended.
+    /// Use a[0], a[1], ... to access elements in an array, a.Length is the length of array.
     /// Allocate a new array like this: int[] a = new int[10];
     /// </summary>
     public class Array1
