@@ -1,1 +1,3 @@
 # Exercises
+
+Exercises for students
