@@ -17,7 +17,22 @@ namespace Exercises.Level1
         /// </summary>
         public int CountEvens(int[] nums)
         {
-            throw new NotImplementedException();
+            // Izveido mainīgo, kurā glabāsies pāra skaitļu skaits
+            int count = 0;
+
+            // Cikls, kurš iet cauri katram masīva elementam
+            foreach (int num in nums)
+            {
+                // Ja masīva elements dalās ar 2
+                // tad palielinām mainīgo, kurā glabājam pāra skaitļu skaitu
+                if (num % 2 == 0)
+                {
+                    count++;
+                }
+            }
+
+            // Atgriežam saskaitīto pāra skaitļu skaitu
+            return count;
         }
 
         /// <summary>
@@ -31,7 +46,16 @@ namespace Exercises.Level1
         /// </summary>
         public int BigDiff(int[] nums)
         {
-            throw new NotImplementedException();
+            int largest = nums[0];
+            int smallest = nums[0];
+
+            foreach(int num in nums)
+            {
+                largest = Math.Max(largest, num);
+                smallest = Math.Min(smallest, num);
+            }
+
+            return largest - smallest;
         }
 
         /// <summary>
@@ -47,7 +71,18 @@ namespace Exercises.Level1
         /// </summary>
         public int CenteredAverage(int[] nums)
         {
-            throw new NotImplementedException();
+            int sum = 0;
+
+            Array.Sort(nums);
+
+            for (int i = 1; i < nums.Length - 1; i++)
+            {
+                sum += nums[i];
+            }
+
+            int avarage = sum / (nums.Length - 2);
+
+            return avarage;
         }
 
         /// <summary>
@@ -61,7 +96,20 @@ namespace Exercises.Level1
         /// </summary>
         public int Sum13(int[] nums)
         {
-            throw new NotImplementedException();
+            int sum = 0;
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] == 13)
+                {
+                    i++;
+                    continue;
+                }
+
+                sum += nums[i];
+            }
+
+            return sum;
         }
 
         /// <summary>
@@ -75,7 +123,30 @@ namespace Exercises.Level1
         /// </summary>
         public int Sum67(int[] nums)
         {
-            throw new NotImplementedException();
+            int sum = 0;
+            bool isIgnoring = false;
+
+            foreach (int num in nums)
+            {
+                if (num == 6)
+                {
+                    isIgnoring = true;
+                    continue;
+                }
+
+                if (num == 7 && isIgnoring)
+                {
+                    isIgnoring = false;
+                    continue;
+                }
+
+                if (!isIgnoring)
+                {
+                    sum += num;
+                }
+            }
+
+            return sum;
         }
 
         /// <summary>

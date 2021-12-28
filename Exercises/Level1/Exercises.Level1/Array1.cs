@@ -19,7 +19,20 @@ namespace Exercises.Level1
         /// </summary>
         public bool FirstLast6(int[] nums)
         {
-            throw new NotImplementedException();
+            // Izgūstam masīva pirmo elementu un saglabājam iekš mainīgā first
+            int first = nums[0];
+
+            // Izgūstam masīva pēdējo elementu un saglabājam iekš mainīgā last
+            int last = nums[nums.Length - 1];
+
+            // Ja pirmais vai pēdējais elemets ir vienāds ar 6 tad atgriež vērtību true
+            if (first == 6 || last == 6)
+            {
+                return true;
+            }
+
+            // Ja pirmais vai pēdējais elements nav vienāds ar 6, tad atgriežam vērtību false
+            return false;
         }
 
         /// <summary>
@@ -32,7 +45,27 @@ namespace Exercises.Level1
         /// </summary>
         public bool SameFirstLast(int[] nums)
         {
-            throw new NotImplementedException();
+            // Ja masīva garums ir 0, jeb masīvā nav neviena elementa
+            // tad atgriežam vērtību false
+            if (nums.Length == 0)
+            {
+                return false;
+            }
+
+            // Izgūstam masīva pirmo elementu un saglabājam iekš mainīgā first
+            int first = nums[0];
+
+            // Izgūstam masīva pēdējo elementu un saglabājam iekš mainīgā last
+            int last = nums[nums.Length - 1];
+
+            // Ja pirmais un pēdējais elements ir vienāds tad atgriež vērtību true
+            if (first == last)
+            {
+                return true;
+            }
+
+            // Ja pirmais un pēdējais elements nav vienāds, tad atgriežam vērtību false
+            return false;
         }
 
         /// <summary>
@@ -42,7 +75,9 @@ namespace Exercises.Level1
         /// </summary>
         public int[] MakePi()
         {
-            throw new NotImplementedException();
+            int[] piArray = { 3, 1, 4 };
+
+            return piArray;
         }
 
         /// <summary>
@@ -55,7 +90,17 @@ namespace Exercises.Level1
         /// </summary>
         public bool CommonEnd(int[] a, int[] b)
         {
-            throw new NotImplementedException();
+            int aFirst = a[0];
+            int aLast = a[a.Length - 1];
+            int bFirst = b[0];
+            int bLast = b[b.Length - 1];
+
+            if (aFirst == bFirst || aLast == bLast)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -67,7 +112,19 @@ namespace Exercises.Level1
         /// </summary>
         public int Sum3(int[] nums)
         {
-            throw new NotImplementedException();
+            // Izveido mainīgo sum, kurā glabāsim skaitļu summu
+            int sum = 0;
+
+            // Ejam cauri katram nums masīva elementam
+            foreach (int num in nums)
+            {
+                // Pieskaitām katru masīva nums elementu mainīgajam sum
+                // Pilnais pieraksts sum = sum + num
+                sum += num;
+            }
+
+            // Atgriežam summas rezultātu
+            return sum;
         }
 
         /// <summary>
@@ -80,7 +137,10 @@ namespace Exercises.Level1
         /// </summary>
         public int[] RotateLeft3(int[] nums)
         {
-            throw new NotImplementedException();
+            // Izveidojam jaunu masīvu vēlamajā secībā
+            int[] result = { nums[1], nums[2], nums[0] };
+
+            return result;
         }
 
         /// <summary>
@@ -93,7 +153,10 @@ namespace Exercises.Level1
         /// </summary>
         public int[] Reverse3(int[] nums)
         {
-            throw new NotImplementedException();
+            // Izveidojam jaunu masīvu vēlamajā secībā
+            int[] result = { nums[2], nums[1], nums[0] };
+
+            return result;
         }
 
         /// <summary>
@@ -106,7 +169,27 @@ namespace Exercises.Level1
         /// </summary>
         public int[] MaxEnd3(int[] nums)
         {
-            throw new NotImplementedException();
+            // Izgūstam masīva pirmo elementu un saglabājam iekš mainīgā first
+            int first = nums[0];
+
+            // Izgūstam masīva pēdējo elementu un saglabājam iekš mainīgā last
+            int last = nums[nums.Length - 1];
+
+            int biggest = first;
+
+            if (first < last)
+            {
+                biggest = last;
+            }
+
+            // Nomainām katra masīva elementa vērtību uz atrasto lielāko vērtību
+            for (int i = 0; i < nums.Length; i++)
+            {
+                nums[i] = biggest;
+            }
+
+            // Atgriežam modificēto masīvu
+            return nums;
         }
 
         /// <summary>

@@ -18,7 +18,12 @@ namespace Exercises.Level1
         /// </summary>
         public bool SleepIn(bool weekday, bool vacation)
         {
-            throw new NotImplementedException();
+            if (!weekday || vacation)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
