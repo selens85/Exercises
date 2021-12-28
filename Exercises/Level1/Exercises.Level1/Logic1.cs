@@ -19,7 +19,23 @@ namespace Exercises.Level1
         /// </summary>
         public bool CigarParty(int cigars, bool isWeekend)
         {
-            throw new NotImplementedException();
+            // ja cigāri ir mazāk kā 40 tad atgriežam false
+            // pēc nosacījumiem var secināt, ka tā nekad nebūs izdevusies ballīte, ja cigāri būs mazāk, kā 40
+            if (cigars < 40)
+            {
+                return false;
+            }
+
+            // Ja cigāri ir mazāk vai vienā skaitā, kā 60 vai ir brīvdiena, tad atgriežam true
+            // Tagad zinām, ka cigāri ir starp 40 un 60, jo ja būtu zem 40, tad iepriekšējā pārbaude būtu nostrādājusi
+            // Tā kā brīvdienās nav skaita ierobežojuma izmantojam vai(or) operatoru
+            if (cigars <= 60 || isWeekend)
+            {
+                return true;
+            }
+
+            // Citos gadījumos atgriežam false, jo tas nozīmē, ka ir vairāk, kā 60 cigāri
+            return false;
         }
 
         /// <summary>
@@ -36,7 +52,20 @@ namespace Exercises.Level1
         /// </summary>
         public int DateFashion(int you, int date)
         {
-            throw new NotImplementedException();
+            // ja tu vai(or) cilvēki uz satikšanos skaits ir mazāks vai vienāds ar 2, tad atbilde ir 0(no)
+            if (you <= 2 || date <= 2)
+            {
+                return 0;
+            }
+
+            // ja tu vai(or) cilvēki uz satikšanos skaits ir lielāks vai vienāds ar 8, tad atbilde ir 2(yes)
+            if (you >= 8 || date >= 8)
+            {
+                return 2;
+            }
+
+            // Rezultātā abi ir starp 2 un 8, kas nozīmē, ka atbilde ir 1(maybe)
+            return 1;
         }
 
         /// <summary>
@@ -51,7 +80,24 @@ namespace Exercises.Level1
         /// </summary>
         public bool SquirrelPlay(int temp, bool isSummer)
         {
-            throw new NotImplementedException();
+            // piedefinējam mainīgā augšējo robežu un uzstādam sākotnējo vērtību 90
+            int tempUpperLimit = 90;
+
+            // Ja ir vasara, tad temperatūras augšējo robežu uzstādam vērtību 100
+            if (isSummer)
+            {
+                tempUpperLimit = 100;
+            }
+
+            // Ja tempretūra ir lielāka vai vienāda ar 60 un mazāka vai vienāda ar maksimālo vērtību
+            // tad atgriežam patiesību(true)
+            if (temp >= 60 && temp <= tempUpperLimit)
+            {
+                return true;
+            }
+
+            // citos gadījumos, kad neizpildās iepriekšējais nosacījums atgriežam nepatiesību(false)
+            return false;
         }
 
         /// <summary>
@@ -67,7 +113,27 @@ namespace Exercises.Level1
         /// </summary>
         public int CaughtSpeeding(int speed, bool isBirthday)
         {
-            throw new NotImplementedException();
+            // Ja ir dzimšanas diena, tad samazinām pieņemto ātrumu par 5
+            if (isBirthday)
+            {
+                speed -= 5;
+            }
+
+            // Ja ātrums ir mazāks vai vienāds ar 60, tad nav sods / atgriežam vērtību 0;
+            if (speed <= 60)
+            {
+                return 0;
+            }
+
+            // Ja ātrums ir lielāks vai vienāds ar 81 tad sods ir liels / atgriežam vērtību 2
+            if (speed >= 81)
+            {
+                return 2;
+            }
+
+            // Visos citos gadījumos secinām, ka vērtība būs starp 60 un 81
+            // Attiecīgi atgriežam mazs sods / atgriežam vērtību 1
+            return 1;
         }
 
         /// <summary>
@@ -80,7 +146,19 @@ namespace Exercises.Level1
         /// </summary>
         public int SortaSum(int a, int b)
         {
-            throw new NotImplementedException();
+            // Aprēķinām a un b summu un pieglabājam vērtību jaunā mainīgajā, kurš saucās sum
+            int sum = a + b;
+
+            // Ja summa ir lielāka vai vienāda ar 10 vai mazāka vienāda ar 19
+            // tad atgriežam vērtību 20
+            if (sum >= 10 && sum <= 19)
+            {
+                return 20;
+            }
+
+            // Visos citos gadījumos, kad neizpildās if nosacījums
+            // Tad atgriežam skaitļu summu
+            return sum;
         }
 
         /// <summary>
@@ -96,7 +174,37 @@ namespace Exercises.Level1
         /// </summary>
         public string AlarmClock(int day, bool vacation)
         {
-            throw new NotImplementedException();
+            // Piedefinējam 3 iespējamās atgriežamās vērtības balstoties uz uzdevuma nosacījumiem
+            string early = "7:00";
+            string late = "10:00";
+            string off = "off";
+
+            // Ja ir brīvdiena (sestdiena vai svētdiena)
+            if (day == 0 || day == 6)
+            {
+                // Ja ir atvaļinājums
+                // Tad modinātājam nav jābūt ieslēgtam
+                if (vacation)
+                {
+                    return off;
+                }
+
+                // Citādi modinātājam ir jābūt vēlu
+                return late;
+            }
+
+            // Pēc iepriekšējās pārbaudes tagad zinam, ka ir darba diena
+
+            // Ja ir atvaļinājums un ir darba diena
+            // Tad liekam modinātāju vēlu
+            if (vacation)
+            {
+                return late;
+            }
+
+            // Tagad zinām, ka ir darba diena un nav atvaļinājums
+            // Tad liekam modinātāju agri
+            return early;
         }
 
         /// <summary>
@@ -110,7 +218,35 @@ namespace Exercises.Level1
         /// </summary>
         public bool Love6(int a, int b)
         {
-            throw new NotImplementedException();
+            // Ja a vai b ir vienāds ar 6
+            // Tad atgriežam vērtību true
+            if (a == 6 || b == 6)
+            {
+                return true;
+            }
+
+            // Ja a un b summa ir vienāda ar 6
+            // Tad atgriežam vērtību true
+            if (a + b == 6)
+            {
+                return true;
+            }
+
+            // Aprēķinām a un b starpību un pieķirām vērtību subtracted mainīgajam
+            int subtracted = a - b;
+            // normalizējam starpību uz pozitīvu skaitli. -6 pārtop par 6
+            int diff = Math.Abs(subtracted);
+
+            // Ja skaitļu starpība ir 6
+            // Tad atgriežam vērtību true
+            if (diff == 6)
+            {
+                return true;
+            }
+
+            // Neesam atraduši nevienu pozitīvu 6 scenāriju
+            // Tad atgriežam vērtību false
+            return false;
         }
 
         /// <summary>
@@ -124,7 +260,7 @@ namespace Exercises.Level1
         /// </summary>
         public bool In1To10(int n, bool outsideMode)
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException(); 
         }
 
         /// <summary>
