@@ -1,34 +1,33 @@
 ﻿using Xunit;
 
-namespace Exercises.Level2.Tests
+namespace Exercises.Level2.Tests;
+public class WordsInTriangleTests
 {
-    public class WordsInTriangleTests
-    {
-        private readonly WordsInTriangle _wordsInTriangle = new WordsInTriangle();
+    private readonly WordsInTriangle _wordsInTriangle = new WordsInTriangle();
 
-        [Fact]
-        public void Hello()
+    [Fact]
+    public void Hello()
+    {
+        string[] expected = new string[]
         {
-            string[] expected = new string[]
-            {
                 "     *",
                 "    * *",
                 "   *   *",
                 "  *     *",
                 " * home  *",
                 "***********",
-            };
+        };
 
-            string[] words = new string[] { "home" };
+        string[] words = new string[] { "home" };
 
-            Assert.Equal(expected, _wordsInTriangle.GetWordInTriangle(words));
-        }
+        Assert.Equal(expected, _wordsInTriangle.GetWordInTriangle(words));
+    }
 
-        [Fact]
-        public void ABeautifulHome()
+    [Fact]
+    public void ABeautifulHome()
+    {
+        string[] expected = new string[]
         {
-            string[] expected = new string[]
-            {
                 "        *",
                 "       * *",
                 "      *   *",
@@ -38,18 +37,18 @@ namespace Exercises.Level2.Tests
                 "  * beautiful *",
                 " * home        *",
                 "*****************",
-            };
+        };
 
-            string[] words = new string[] { "a", "beautiful", "home" };
+        string[] words = new string[] { "a", "beautiful", "home" };
 
-            Assert.Equal(expected, _wordsInTriangle.GetWordInTriangle(words));
-        }
+        Assert.Equal(expected, _wordsInTriangle.GetWordInTriangle(words));
+    }
 
-        [Fact]
-        public void SunshineIsGreat()
+    [Fact]
+    public void SunshineIsGreat()
+    {
+        string[] expected = new string[]
         {
-            string[] expected = new string[]
-            {
                 "         *",
                 "        * *",
                 "       *   *",
@@ -60,42 +59,41 @@ namespace Exercises.Level2.Tests
                 "  * is          *",
                 " * great         *",
                 "*******************",
-            };
+        };
 
-            string[] words = new string[] { "sunshine", "is", "great" };
+        string[] words = new string[] { "sunshine", "is", "great" };
 
-            Assert.Equal(expected, _wordsInTriangle.GetWordInTriangle(words));
-        }
+        Assert.Equal(expected, _wordsInTriangle.GetWordInTriangle(words));
+    }
 
-        [Fact]
-        public void A()
+    [Fact]
+    public void A()
+    {
+        string[] expected = new string[]
         {
-            string[] expected = new string[]
-            {
                 "   *",
                 "  * *",
                 " * A *",
                 "*******",
-            };
+        };
 
-            string[] words = new string[] { "A" };
+        string[] words = new string[] { "A" };
 
-            Assert.Equal(expected, _wordsInTriangle.GetWordInTriangle(words));
-        }
+        Assert.Equal(expected, _wordsInTriangle.GetWordInTriangle(words));
+    }
 
-        [Fact]
-        public void Empty()
+    [Fact]
+    public void Empty()
+    {
+        string[] expected = new string[]
         {
-            string[] expected = new string[]
-            {
                 "  *",
                 " * *",
                 "*****",
-            };
+        };
 
-            string[] words = new string[] { };
+        string[] words = new string[] { };
 
-            Assert.Equal(expected, _wordsInTriangle.GetWordInTriangle(words));
-        }
+        Assert.Equal(expected, _wordsInTriangle.GetWordInTriangle(words));
     }
 }
