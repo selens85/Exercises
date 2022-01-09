@@ -19,6 +19,7 @@ public class Array2Tests
     {
         Assert.Equal(expected, _array1.CountEvens(nums));
     }
+
     [Theory]
     [InlineData(7, new[] { 10, 3, 5, 6 })]
     [InlineData(8, new[] { 7, 2, 10, 9 })]
