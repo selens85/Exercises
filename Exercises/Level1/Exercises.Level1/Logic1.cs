@@ -237,7 +237,7 @@ public class Logic1
     /// </summary>
     public bool SpecialEleven(int n)
     {
-        if (n / 11 == 11)
+        if (n % 11 == 11)
         {
             return true;
         }
