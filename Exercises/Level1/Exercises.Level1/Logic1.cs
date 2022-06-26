@@ -20,14 +20,14 @@ public class Logic1
     public bool CigarParty(int cigars, bool isWeekend)
     {
         // 1. Ja cigāru skaits ir zem 40 tad atgriežam false
-       
+
         // 2. Ja ir brīvdiena, tad agriežam vērtību true
         if ((cigars >= 40) && (isWeekend || cigars <= 60))
         {
             return true;
         }
         // 3. Ja cigāru skaits ir zem 60, tad atgriežam vērtību true (zinām jau, ka nav brīvdienu)
-        
+
         // 4. Visos citos gadījumos atgriešam false
         return false;
 
@@ -85,7 +85,7 @@ public class Logic1
         {
             maxTemp += 10;
         }
-    
+
         // 2. Ja temperatūra ir virs 60 un zem 100 un ir vasara, tad atgriežam vērtību true
         if (temp <= maxTemp)
         {
@@ -110,7 +110,22 @@ public class Logic1
     /// </summary>
     public int CaughtSpeeding(int speed, bool isBirthday)
     {
-        throw new NotImplementedException();
+
+        if (isBirthday)
+        {
+            speed -= 5;
+        }
+
+        if (speed <= 60)
+        {
+            return 0;
+        }
+
+        if (speed >= 81)
+        {
+            return 2;
+        }
+        return 1;
     }
 
     /// <summary>
@@ -123,7 +138,14 @@ public class Logic1
     /// </summary>
     public int SortaSum(int a, int b)
     {
-        throw new NotImplementedException();
+        int sum = a + b;
+
+        if (sum >= 10 && sum <= 19)
+        {
+            return 20;
+        }
+
+        return sum;
     }
 
     /// <summary>
@@ -139,7 +161,26 @@ public class Logic1
     /// </summary>
     public string AlarmClock(int day, bool vacation)
     {
-        throw new NotImplementedException();
+        string early = "7:00";
+        string late = "10:00";
+        string off = "off";
+
+        if (day == 0 || day == 6)
+        {
+
+            if (vacation)
+            {
+                return off;
+            }
+
+            return late;
+        }
+        if (vacation)
+        {
+            return late;
+        }
+        return early;
+
     }
 
     /// <summary>
@@ -153,7 +194,21 @@ public class Logic1
     /// </summary>
     public bool Love6(int a, int b)
     {
-        throw new NotImplementedException();
+        if (a == 6 || b == 6)
+        {
+            return true;
+        }
+        if (a + b == 6)
+        {
+            return true;
+
+        }
+        int difference = a - b;
+        if (Math.Abs(difference) == 6)
+        {
+            return true;
+        }
+        return false;
     }
 
     /// <summary>
@@ -166,8 +221,10 @@ public class Logic1
     /// in1To10(11, true) → true
     /// </summary>
     public bool In1To10(int n, bool outsideMode)
+       
+
     {
-        throw new NotImplementedException();
+        return true;
     }
 
     /// <summary>
@@ -180,7 +237,13 @@ public class Logic1
     /// </summary>
     public bool SpecialEleven(int n)
     {
-        throw new NotImplementedException();
+        if (n / 11 == 11)
+        {
+            return true;
+        }
+        
+        return false;
+
     }
 
     /// <summary>
@@ -261,7 +324,20 @@ public class Logic1
     /// </summary>
     public bool AnswerCell(bool isMorning, bool isMom, bool isAsleep)
     {
-        throw new NotImplementedException();
+       
+        if (isAsleep)
+        {
+            return false;
+        }
+        if (isMom)
+        {
+            return true;
+        }
+        if (isMorning)
+        {
+            return false;
+        }
+        return true;
     }
 
     /// <summary>
@@ -277,7 +353,15 @@ public class Logic1
     /// </summary>
     public int TeaParty(int tea, int candy)
     {
-        throw new NotImplementedException();
+        if (tea < 5 || candy < 5)
+        {
+            return 0;
+        }
+        if (tea / candy >= 2 || candy / tea >= 2)
+        {
+            return 2;
+        }        
+         return 1;       
     }
 
     /// <summary>
@@ -319,7 +403,12 @@ public class Logic1
     /// </summary>
     public bool TwoAsOne(int a, int b, int c)
     {
-        throw new NotImplementedException();
+        if (a + b == c || b + c == a || c + a == b)
+        {
+            return true;
+        }
+        return false;
+
     }
 
     /// <summary>
@@ -332,7 +421,15 @@ public class Logic1
     /// </summary>
     public bool InOrder(int a, int b, int c, bool bOk)
     {
-        throw new NotImplementedException();
+        if (b < c && bOk == true)
+        {
+            return true;
+        }
+        if (b > a && c > b)
+        {
+            return true;
+        }
+        return false;
     }
 
     /// <summary>
@@ -346,7 +443,15 @@ public class Logic1
     /// </summary>
     public bool InOrderEqual(int a, int b, int c, bool bOk)
     {
-        throw new NotImplementedException();
+        if (a <= b && b <= c && bOk == true)
+        {
+            return true;
+        }
+        if (a < b && b < c)
+        {
+            return true;
+        }
+        return false;
     }
 
     /// <summary>
@@ -373,7 +478,11 @@ public class Logic1
     /// </summary>
     public bool LessBy10(int a, int b, int c)
     {
-        throw new NotImplementedException();
+        if (a > 10 || b > 10 || c > 10 || a < 0 || b < 0 || c < 0)
+        {
+            return true;
+        }
+        return false;
     }
 
     /// <summary>
@@ -402,7 +511,15 @@ public class Logic1
     /// </summary>
     public int MaxMod5(int a, int b)
     {
-        throw new NotImplementedException();
+        if (a == b)
+        {
+            return 0;
+        }
+        if (a % 5 == b % 5)
+        {
+            return Math.Min(a, b);
+        }
+        return Math.Max(a, b);  
     }
 
     /// <summary>
@@ -446,7 +563,27 @@ public class Logic1
     /// </summary>
     public int BlueTicket(int a, int b, int c)
     {
-        throw new NotImplementedException();
+        int firstPair = a + b;
+        int secondPair = b + c;
+        int thirdPair = a + c;
+
+        if (firstPair == 10)
+        {
+            return 10;
+        }
+        if (secondPair == 10)
+        {
+            return 10;
+        }
+        if (thirdPair == 10)
+        {
+            return 10;
+        }
+        if (firstPair == 15)
+        {
+            return 5;
+        }
+        return 0;
     }
 
     /// <summary>
