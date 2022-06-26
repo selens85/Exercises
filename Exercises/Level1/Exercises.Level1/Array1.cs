@@ -216,7 +216,7 @@ public class Array1
 
         if (nums.Length == 0)
         {
-            return 0;
+            return 0; 
         }
               
 
@@ -307,7 +307,10 @@ public class Array1
     /// </summary>
     public int[] MakeLast(int[] nums)
     {
-        throw new NotImplementedException();
+        int[] newArray = new int[nums.Length * 2];
+        newArray[newArray.Length - 1] = nums[nums.Length -1 ];
+
+      return newArray;
     }
 
     /// <summary>
@@ -320,7 +323,20 @@ public class Array1
     /// </summary>
     public bool Double23(int[] nums)
     {
-        throw new NotImplementedException();
+        
+        if (nums.Length <= 1)
+        {
+            return false;
+        }
+
+
+        if (nums[0] == 2 && nums[1] == 2 || nums[0] == 3 && nums[1] == 3)
+            {
+                return true;
+            }
+
+            return false ;
+
     }
 
     /// <summary>
